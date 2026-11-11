@@ -1,0 +1,8 @@
+- insert:
+    - id: fast-mentions
+      name: dsh-fast-mentions
+      config:
+        fileIndex: true
+        sessionIndex: true
+        prewarm: true
+        coldBudgetMs: 120

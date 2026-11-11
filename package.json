@@ -1,0 +1,42 @@
+{
+  "name": "dsh-fast-mentions",
+  "version": "0.3.0",
+  "description": "让 DSH 的 @ 补全在会话的第一个按键就是快的：按工作区共享文件索引（top-k + 前缀收窄 + 冷启动部分结果）+ 会话候选走内存索引",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shichien/dsh-fast-at.git"
+  },
+  "files": [
+    "lib/",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node test/selftest.mjs",
+    "test:equivalence": "node test/equivalence.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}
